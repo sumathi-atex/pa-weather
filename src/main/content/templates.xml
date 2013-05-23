@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template-definition version="1.0" xmlns="http://www.polopoly.com/polopoly/cm/app/xml">
+  <!--This file contains input template definitions -->
+  <input-template name="com.atex.plugins.paweather.MainElement" label="com.atex.plugins.paweather.mainElement">
+    
+    <policy>com.atex.plugins.baseline.policy.BaselinePolicy</policy>
+
+    <editor>com.polopoly.cm.app.widget.OAjaxTopPolicyWidget</editor>
+    <viewer>com.polopoly.cm.app.widget.OAjaxTopPolicyWidget</viewer>
+    
+    <type>LayoutElement</type>
+    <param name="renderTemplateIconInSelect">true</param>
+    <editor contextName="orchid_TOCENTRY">com.atex.plugins.baseline.widget.OContentListEntryBasePolicyWidget</editor>
+    <viewer contextName="orchid_TOCENTRY">com.atex.plugins.baseline.widget.OContentListEntryBasePolicyWidget</viewer>
+    <param name="ViewState_insert">false</param>
+    <param name="EditState_saveAndClose">true</param>
+    <param name="EditState_saveAndInsert">false</param>
+    <param name="EditState_saveAndFastInsert">false</param>
+    <param name="EditState_saveAndView">true</param>
+    <param name="EditNewState_saveAndClose">false</param>
+    <param name="EditNewState_saveAndInsert">false</param>
+    <param name="EditNewState_saveAndFastInsert">true</param>
+    <param name="EditNewState_saveAndView">false</param>
+
+	<field name="name" input-template="p.ContentName" label="com.atex.plugins.paweather.name" required="true" />
+    <field name="title" input-template="p.TextInput" label="com.atex.plugins.paweather.title" required="true"/>
+    <field name="location" input-template="p.TextInput" label="com.atex.plugins.paweather.default.location.number" required="true">
+       <param name="inlineHelp">true</param>
+       <help>com.atex.plugins.paweather.default.location.number.help</help>
+    </field>   
+    <field name="viewMode" input-template="p.RadioButtonGroup" label="com.atex.plugins.paweather.display.mode">
+      <help>com.atex.plugins.paweather.display.mode.help</help>
+      <param name="label_0">com.atex.plugins.paweather.MainElement.display.mode.widget</param>
+      <param name="value_0">widget</param>
+      <param name="label_1">com.atex.plugins.paweather.MainElement.display.mode.page</param>
+      <param name="value_1">page</param>
+      <param name="selected">0</param>
+    </field>
+    
+    <field name="weatherfeedAPIURI" input-template="p.TextInput" label="com.atex.plugins.paweather.weather.feed.api.uri" required="true"/>
+    <field name="weatherfeedAPIusername" input-template="p.TextInput" label="com.atex.plugins.paweather.weather.feed.api.username" required="true"/>
+    <field name="weatherfeedAPIpassword" input-template="p.TextInput" label="com.atex.plugins.paweather.weather.feed.api.password" required="true"/>
+
+    <output-templates mode="www">
+      <id>com.atex.plugins.paweather.MainElement.ot</id>
+    </output-templates>
+  </input-template>
+</template-definition>
